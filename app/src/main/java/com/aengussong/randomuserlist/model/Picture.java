@@ -3,7 +3,9 @@ package com.aengussong.randomuserlist.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Picture {
+import java.io.Serializable;
+
+public class Picture implements Serializable {
 
     @SerializedName("large")
     @Expose

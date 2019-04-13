@@ -17,12 +17,6 @@ public class DataProvider {
         remoteDataProvider = apiClient;
     }
 
-    public Single<RandomUserResponse> getInitialList() {
-        return remoteDataProvider.getInitialList()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread());
-    }
-
     public Single<RandomUserResponse> getPage(int page, String seed) {
         return remoteDataProvider.getNextPage(page, PAGE_SIZE, seed)
                 .subscribeOn(Schedulers.io())

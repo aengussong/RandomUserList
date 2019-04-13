@@ -1,9 +1,13 @@
 package com.aengussong.randomuserlist.model;
 
+import android.support.v7.util.DiffUtil;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class RandomUser {
+import java.io.Serializable;
+
+public class RandomUser implements Serializable {
 
     @SerializedName("gender")
     @Expose
@@ -56,6 +60,13 @@ public class RandomUser {
 
     public void setName(Name name) {
         this.name = name;
+    }
+
+    public String getFullName() {
+        String first = name.getFirst();
+        String last = name.getLast();
+
+        return first + " " + last;
     }
 
     public Location getLocation() {
@@ -138,4 +149,21 @@ public class RandomUser {
         this.nat = nat;
     }
 
+    public static DiffUtil.ItemCallback<RandomUser> DIFF_CALLBACK = new DiffUtil.ItemCallback<RandomUser>() {
+        @Override
+        public boolean areItemsTheSame(RandomUser oldItem, RandomUser newItem) {
+            return oldItem.id == newItem.id;
+        }
+
+        @Override
+        public boolean areContentsTheSame(RandomUser oldItem, RandomUser newItem) {
+            if (!oldItem.name.getFirst().equals(newItem.name.getFirst()))
+                return false;
+            if (!oldItem.name.getLast().equals(newItem.name.getLast()))
+                return false;
+            if (!oldItem.gender.equals(newItem.gender))
+                return false;
+            return oldItem.email.equals(newItem.email);
+        }
+    };
 }

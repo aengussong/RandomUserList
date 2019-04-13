@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="java.lang.Integer" />
+
+        <variable
+            name="user_click_listener"
+            type="com.aengussong.randomuserlist.adapter.UserAdapter.RandomUserViewHolder" />
+
+        <variable
+            name="rnd_user"
+            type="com.aengussong.randomuserlist.model.RandomUser" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:onClick="@{()->user_click_listener.onUserClick(rnd_user)}">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            app:url="@{rnd_user.getPicture().getMedium()}" />
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/user_icon"
+            android:layout_toRightOf="@id/user_icon"
+            android:text="@{rnd_user.getFullName()}"
+            tools:text="name surname" />
+
+        <TextView
+            android:id="@+id/user_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_name"
+            android:layout_alignStart="@id/user_name"
+            android:layout_alignLeft="@id/user_name"
+            android:text="@{Integer.toString(rnd_user.getDob().getAge())}"
+            tools:text="32" />
+
+        <TextView
+            android:id="@+id/user_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_age"
+            android:layout_alignStart="@id/user_age"
+            android:layout_alignLeft="@id/user_age"
+            android:text="@{rnd_user.getGender()}"
+            tools:text="sdfsdfsdf@gmail.com" />
+
+    </RelativeLayout>
+</layout>

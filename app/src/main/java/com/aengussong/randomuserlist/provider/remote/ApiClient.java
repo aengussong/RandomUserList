@@ -8,9 +8,9 @@ import retrofit2.http.Query;
 
 public interface ApiClient {
 
-    @GET
-    Single<RandomUserResponse> getInitialList();
+    @GET("api/")
+    Single<RandomUserResponse> getNextPage(@Query("page") int page,
+                                           @Query("results") int results,
+                                           @Query("seed") String seed);
 
-    @GET
-    Single<RandomUserResponse> getNextPage(@Query("page") int page, @Query("results") int results, @Query("seed") String seed);
 }

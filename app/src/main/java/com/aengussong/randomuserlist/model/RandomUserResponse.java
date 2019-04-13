@@ -7,7 +7,7 @@ import java.util.List;
 
 public class RandomUserResponse {
 
-    @SerializedName("randomUsers")
+    @SerializedName("results")
     @Expose
     private List<RandomUser> randomUsers = null;
     @SerializedName("info")
