@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">RandomUserList</string>
+    <string name="cell">Cell: %s</string>
+    <string name="phone">Phone: %s</string>
+    <string name="city">City: %s</string>
+    <string name="street">Street: %s</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.aengussong.randomuserlist.ui.main;
+package com.aengussong.randomuserlist.ui;
 
 import android.arch.paging.PagedList;
 import android.content.Intent;
@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.aengussong.randomuserlist.DetailsActivity;
+import com.aengussong.randomuserlist.ui.DetailsActivity;
 import com.aengussong.randomuserlist.R;
 import com.aengussong.randomuserlist.adapter.UserAdapter;
 import com.aengussong.randomuserlist.model.RandomUser;

@@ -1,7 +1,7 @@
 package com.aengussong.randomuserlist.di;
 
-import com.aengussong.randomuserlist.DetailsActivity;
-import com.aengussong.randomuserlist.ui.main.MainActivity;
+import com.aengussong.randomuserlist.ui.DetailsActivity;
+import com.aengussong.randomuserlist.ui.MainActivity;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;

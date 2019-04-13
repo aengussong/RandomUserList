@@ -37,9 +37,6 @@ public class UserAdapter extends PagedListAdapter<RandomUser, UserAdapter.Random
         viewHolder.bind(getItem(i));
     }
 
-//    public void onUserClick(RandomUser user){
-
-
     public class RandomUserViewHolder extends RecyclerView.ViewHolder {
         ItemRandomUserBinding binding;
 
