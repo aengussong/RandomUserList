@@ -6,15 +6,12 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.aengussong.randomuserlist.ui.DetailsActivity;
 import com.aengussong.randomuserlist.R;
 import com.aengussong.randomuserlist.adapter.UserAdapter;
 import com.aengussong.randomuserlist.model.RandomUser;
 
 import javax.inject.Inject;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import dagger.android.support.DaggerAppCompatActivity;
 
 public class MainActivity extends DaggerAppCompatActivity implements
@@ -23,15 +20,15 @@ public class MainActivity extends DaggerAppCompatActivity implements
     @Inject
     PagedList<RandomUser> pagedList;
 
-    @BindView(R.id.user_list)
-    RecyclerView usersRv;
+    private RecyclerView usersRv;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+
+        usersRv = findViewById(R.id.user_list);
 
         initAdapter();
     }
